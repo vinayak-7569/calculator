@@ -1,0 +1,116 @@
+ /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+/* Calculator Container */
+.calculator {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.calculator:hover {
+    transform: scale(1.05);
+}
+
+/* Display Screen */
+.display {
+    width: 100%;
+    height: 50px;
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    outline: none;
+}
+
+/* Button Styling */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* History Panel */
+.history {
+    position: absolute;
+    right: -250px;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    transition: right 0.4s ease-in-out;
+    overflow-y: auto;
+}
+
+.history h3 {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.history ul li {
+    color: white;
+    font-size: 1rem;
+    padding: 5px;
+    background: rgba(255, 255, 255, 0.3);
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Show history */
+.history.show {
+    right: 0;
+}
